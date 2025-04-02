@@ -2,45 +2,45 @@
 # 	g++ -c Grid.cpp
 # Minesweeper.o: Minesweeper.cpp
 # 	g++ -c Minesweeper.cpp
-# ex4.o: ex4.cpp
-# 	g++ -c ex4.cpp
-# ex4: ex4.o Grid.o Minesweeper.o
-# 	g++ -o ex4 ex4.o Grid.o Minesweeper.o
+# main.o: main.cpp
+# 	g++ -c main.cpp
+# main: main.o Grid.o Minesweeper.o
+# 	g++ -o main main.o Grid.o Minesweeper.o
 # clean:
 # # remove .o files in VSC
-# 	del --file ex4.o
+# 	del --file main.o
 # 	del --file Grid.o
 # 	del --file Minesweeper.o
 # cla:
 # # clean all in VSC
-# 	del --file ex4.o
+# 	del --file main.o
 # 	del --file Grid.o
 # 	del --file Minesweeper.o
-# 	del --file ex4.exe
+# 	del --file main.exe
 # clear:
 # # remove .o files in Mobaxterm
-# 	rm -f ex4.o
+# 	rm -f main.o
 # 	rm -f Grid.o
 # 	rm -f Minesweeper.o
 # clr:
 # # clean all in Mobaxterm
-# 	rm -f ex4.o
+# 	rm -f main.o
 # 	rm -f Grid.o
 # 	rm -f Minesweeper.o
-# 	rm -f ex4.exe
+# 	rm -f main.exe
 
 # Compiler and flags
 CXX = g++
 CXXFLAGS = -c
 
 # Source files
-SRCS = Grid.cpp Minesweeper.cpp ex4.cpp
+SRCS = Grid.cpp Minesweeper.cpp main.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
 
 # Executable target
-TARGET = ex4
+TARGET = main
 
 # Rule to build the target executable
 $(TARGET): $(OBJS)
@@ -52,7 +52,7 @@ $(TARGET): $(OBJS)
 
 # Clean .o files in VS Code
 clean-vsc:
-	del /f ex4.o Grid.o Minesweeper.o 2>nul || echo No .o files to delete.
+	del /f main.o Grid.o Minesweeper.o 2>nul || echo No .o files to delete.
 
 # Clean all in VS Code
 cla-vsc: clean-vsc
